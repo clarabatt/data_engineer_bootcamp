@@ -1,9 +1,22 @@
 # Data Engineer Bootcamp
 
-## [A001](A001/) - Introdução a Engenharia de Dados
+## [A001](A001/) - Data Engineer Introduction
 
-## [A003](A003/) - Fundamentos de Ingestão de Dados
+- Requests Lib
+- Collections
+
+## [A003](A003/) - Data Ingestion Fundaments
+
+- Try and Except
+- Decorators
+- Logs and Debug
+- CSV Population
+- Data Scraping from HTML
 
 ## [A004](A004/) - Docker + SQL
+
+- Docker
+- Docker Compose
+- ![loading](loading.gif)
 
 [How Bootcamps](https://howedu.com.br/)
