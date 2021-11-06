@@ -43,3 +43,8 @@ Example:
 `docker-compose down`
 
 `docker-compose ps`
+
+## SQL
+
+`SELECT DISTINCT`
+> avoid in big data bases

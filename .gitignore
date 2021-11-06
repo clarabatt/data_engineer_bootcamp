@@ -148,3 +148,4 @@ cython_debug/
 MAIN_NOTES.md
 .vscode
 .idea
+.db
