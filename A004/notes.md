@@ -48,3 +48,19 @@ Example:
 
 `SELECT DISTINCT`
 > avoid in big data bases
+
+## Interaction with DB using Python
+
+1. Install SQLAlchemy
+`pip install SQLAlchemy`
+
+2. Install psycopg
+`pip install psycopg`
+
+Creating engine:
+
+```python
+engine = create_engine(
+    'postgresql+psycopg2://user:password@hostname/database_name'
+)
+```
