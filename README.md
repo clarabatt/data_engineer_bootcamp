@@ -17,6 +17,11 @@
 
 - Docker
 - Docker Compose
+- SQL (CRUD Table, JOIN, GROUP BY...)
+
+
+## [A005](A005/) - Getting data from APIs 
+- OOP in Python, using classes
 - ![loading](loading.gif)
 
 [How Bootcamps](https://howedu.com.br/)
