@@ -29,4 +29,4 @@ class Curriculum:
         self.experiences.append(experience)
 
     def __str__(self):
-        return f"{self.person.name} {self.person.lastname} already work for {self.experience_amount} companies in all then career"
+        return f"{self.person.name} {self.person.lastname} already worked for {self.experience_amount} companies in all their career. Now is working for {self.current_role}."

@@ -16,4 +16,4 @@ class Person:
         '''
         return math.floor((datetime.date.today() - self.birth_date).days / 365.2425)
     def __str__ (self) -> str:
-        return f"{self.name} {self.lastname} is {self.age}"
+        return f"{self.name} {self.lastname} is {self.age} years"
