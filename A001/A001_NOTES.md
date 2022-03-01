@@ -8,6 +8,9 @@ Create virtual enviroment command
 Ativate the enviroment
 `source .venv/bin/activate`
 
+Deactvate
+`deactivate`
+
 ### Dependencies
 - requests
 - pandas
