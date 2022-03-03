@@ -31,13 +31,13 @@ while not has_item(table_xpath):
 #%%
 table = driver.find_element(By.XPATH, table_xpath)
 
-driver.close()
-
 df = pd.read_html('<table>' + table.get_attribute('innerHTML') + '</table>')[0]
-
 
 #%%
 print(df[df['Ano'] == 1984])
 
 #%%
 df.to_csv('nicolas_cage_movies.csv', sep=';', index=False)
+
+time.sleep(5)
+driver.close()
