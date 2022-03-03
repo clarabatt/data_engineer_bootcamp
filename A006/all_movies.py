@@ -34,6 +34,10 @@ table = driver.find_element(By.XPATH, table_xpath)
 df = pd.read_html('<table>' + table.get_attribute('innerHTML') + '</table>')[0]
 
 #%%
+with open('print.png', 'wb') as f:
+    f.write(driver.find_element(By.XPATH, table_xpath).screenshot_as_png)
+
+#%%
 print(df[df['Ano'] == 1984])
 
 #%%
