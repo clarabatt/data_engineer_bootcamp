@@ -9,7 +9,7 @@ if __name__ == "__main__":
     daySummaryIngestor = DaySummaryIngestor(
         writer=DataWriter,
         coins=["BTC", "ETH", "LTC"],
-        defaulStartDate=datetime.date(2021, 6, 1)
+        default_start_date=datetime.datetime(2021, 6, 1)
     )
 
     @repeat(every(1).seconds)
@@ -19,3 +19,4 @@ if __name__ == "__main__":
     while True:
         run_pending()
         time.sleep(0.5)
+
