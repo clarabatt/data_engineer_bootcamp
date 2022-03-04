@@ -3,8 +3,8 @@ import logging
 import requests
 
 from abc import abstractmethod
-from backoff import on_exception
-from ratelimit import limits, expo, exception
+from backoff import on_exception, expo
+from ratelimit import limits, exception
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
