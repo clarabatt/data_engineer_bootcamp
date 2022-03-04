@@ -6,7 +6,9 @@ from typing import List
 
 
 class DataIngestor(ABC):
-    def __init__(self, coins: List[str], default_start_date: datetime.datetime, writer) -> None:
+    def __init__(
+        self, coins: List[str], default_start_date: datetime.datetime, writer
+    ) -> None:
         self.defaultStartDate = default_start_date
         self.coins = coins
         self.writer = writer
@@ -43,7 +45,6 @@ class DataIngestor(ABC):
 
 
 class DaySummaryIngestor(DataIngestor):
-
     def ingest(self) -> None:
         date = self._get_checkpoint()
         if date < datetime.datetime.today():

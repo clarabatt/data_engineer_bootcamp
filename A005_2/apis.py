@@ -34,8 +34,9 @@ class MercadoBitcoinApi:
 # print(MercadoBitcoinApi(coin="BTC").getData())
 # print(MercadoBitcoinApi(coin="LTC").getData())
 
+
 class DaySummaryApi(MercadoBitcoinApi):
-    type = 'day-summary'
+    type = "day-summary"
 
     def _get_endpoint(self, date: datetime.date) -> str:
         return f"{self.baseEndPoint}/{self.coin}/{self.type}/{date.year}/{date.month}/{date.day}"
@@ -59,10 +60,13 @@ class TradesApi(MercadoBitcoinApi):
                 raise RuntimeError("until can not be greater than since")
             unix_since = self._get_unix_period(since)
             unix_until = self._get_unix_period(until)
-            endpoint = f"{self.baseEndPoint}/{self.coin}/{self.type}/{unix_since}/{unix_until}"
+            endpoint = (
+                f"{self.baseEndPoint}/{self.coin}/{self.type}/{unix_since}/{unix_until}"
+            )
         else:
             endpoint = f"{self.baseEndPoint}/{self.coin}/{self.type}"
         return endpoint
+
 
 # print(TradesApi("BTC").getData())
 # print(TradesApi("BTC").getData(since=datetime.datetime(2021, 6, 2)))

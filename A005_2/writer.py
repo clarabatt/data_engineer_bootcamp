@@ -32,6 +32,7 @@ class DataWriter:
         else:
             raise DataTypeNotSupportedForIngestion(data)
 
+
 # data = DaySummaryApi(coin="BTC").getData(date=datetime.date(2021, 6, 29))
 # writer = DataWriter("day_summary.json")
 # writer.write(data)
