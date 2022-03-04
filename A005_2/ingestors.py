@@ -46,7 +46,7 @@ class DaySummaryIngestor(DataIngestor):
 
     def ingest(self) -> None:
         date = self._get_checkpoint()
-        if date < datetime.date.today():
+        if date < datetime.datetime.today():
             for coin in self.coins:
                 api = DaySummaryApi(coin=coin)
                 data = api.get_data(date=date)
