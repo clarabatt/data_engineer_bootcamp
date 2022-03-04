@@ -9,6 +9,7 @@ python = "^3.10"
 pandas = "^1.4.1"
 selenium = "^4.1.2"
 lxml = "^4.8.0"
+ipython = "^8.1.1"
 
 [tool.poetry.dev-dependencies]
 
