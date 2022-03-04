@@ -7,14 +7,14 @@ authors = ["Clara Battesini <clarabattesini@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 backoff = "^1.11.1"
-black = "^22.1.0"
 ratelimit = "^2.2.1"
 requests = "^2.27.1"
 schedule = "^1.1.0"
-ipython = "^8.1.1"
-pytest = "^7.0.1"
 
 [tool.poetry.dev-dependencies]
+black = "^22.1.0"
+ipython = "^8.1.1"
+pytest = "^7.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
