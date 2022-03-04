@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 #%%
 
-cep = sys.argv[1]
+cep = sys.argv[0]
 
 if cep:
     driver = webdriver.Chrome('./src/chromedriver')
