@@ -9,7 +9,7 @@ class DataIngestor(ABC):
     def __init__(
         self, coins: List[str], default_start_date: datetime.datetime, writer
     ) -> None:
-        self.defaultStartDate = default_start_date
+        self.default_start_date = default_start_date
         self.coins = coins
         self.writer = writer
         self._checkpoint = self._load_checkpoint()
@@ -25,13 +25,13 @@ class DataIngestor(ABC):
     def _load_checkpoint(self):
         try:
             with open(self._checkpoint_filename, "r") as f:
-                return datetime.datetime.strptime(f.read(), "%Y-%m-%d").date()
+                return datetime.datetime.strptime(f.read(), "%Y-%m-%d")
         except FileNotFoundError:
-            return None
+            return self.default_start_date
 
     def _get_checkpoint(self):
         if not self._checkpoint:
-            return self.defaultStartDate
+            return self.default_start_date
         else:
             return self._checkpoint
 
