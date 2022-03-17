@@ -1,7 +1,7 @@
 import datetime
 import pytest
 
-from apis import DaySummaryApi, TradesApi
+from mercado_bitcoin.apis import DaySummaryApi, TradesApi
 
 
 class TestDaySummaryAPI:

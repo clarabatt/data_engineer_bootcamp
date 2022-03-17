@@ -1,13 +1,13 @@
 import datetime
 import pytest
 
-from ingestors import DataIngestor
+from mercado_bitcoin.ingestors import DataIngestor
 from unittest.mock import mock_open, patch
-from writer import DataWriter
+from mercado_bitcoin.writer import DataWriter
 
 
 @pytest.fixture
-@patch("ingestors.DataIngestor.__abstractmethods__", set())
+@patch("mercado_bitcoin.ingestors.DataIngestor.__abstractmethods__", set())
 def data_ingestor_fixture():
     return DataIngestor(
         writer=DataWriter,
@@ -16,7 +16,7 @@ def data_ingestor_fixture():
     )
 
 
-@patch("ingestors.DataIngestor.__abstractmethods__", set())
+@patch("mercado_bitcoin.ingestors.DataIngestor.__abstractmethods__", set())
 class TestIngestors:
     def test_checkpoint_filename(self, data_ingestor_fixture):
         actual = data_ingestor_fixture._checkpoint_filename
@@ -34,7 +34,7 @@ class TestIngestors:
         expected = datetime.datetime(2021, 6, 25)
         assert actual == expected
 
-    @patch("ingestors.DataIngestor._save_checkpoint", return_value=None)
+    @patch("mercado_bitcoin.ingestors.DataIngestor._save_checkpoint", return_value=None)
     def test_update_checkpoint_checkpoint_updated(self, mock, data_ingestor_fixture):
         data_ingestor = data_ingestor_fixture
         data_ingestor._update_checkpoint(value=datetime.datetime(2019, 1, 1))
@@ -42,7 +42,7 @@ class TestIngestors:
         expected = datetime.datetime(2019, 1, 1)
         assert actual == expected
 
-    @patch("ingestors.DataIngestor._save_checkpoint", return_value=None)
+    @patch("mercado_bitcoin.ingestors.DataIngestor._save_checkpoint", return_value=None)
     def test_update_checkpoint_checkpoint_written(self, mock, data_ingestor_fixture):
         data_ingestor = data_ingestor_fixture
         data_ingestor._update_checkpoint(value=datetime.datetime(2019, 1, 1))
@@ -50,7 +50,8 @@ class TestIngestors:
 
     @patch("builtins.open", new_callable=mock_open, read_data="2021-06-25")
     @patch(
-        "ingestors.DataIngestor._checkpoint_filename", return_value="foobar.chackpoint"
+        "mercado_bitcoin.ingestors.DataIngestor._checkpoint_filename",
+        return_value="foobar.chackpoint",
     )
     def test_save_checkpoint(
         self, mock_checkpoint_filename, mock_open_file, data_ingestor_fixture

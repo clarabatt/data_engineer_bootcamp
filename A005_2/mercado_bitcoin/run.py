@@ -1,8 +1,8 @@
 import datetime
 import time
 
-from ingestors import DaySummaryIngestor
-from writer import DataWriter
+from mercado_bitcoin.ingestors import DaySummaryIngestor
+from mercado_bitcoin.writer import DataWriter
 from schedule import every, run_pending, repeat
 
 if __name__ == "__main__":
