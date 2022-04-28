@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "a009"
+version = "0.1.0"
+description = ""
+authors = ["Clara Battesini <clarabattesini@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.4.2"
+boto3 = "^1.22.2"
+python-dotenv = "^0.20.0"
+ipython = "^8.2.0"
+
+[tool.poetry.dev-dependencies]
+jupyter = "^1.0.0"
+notebook = "^6.4.11"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
