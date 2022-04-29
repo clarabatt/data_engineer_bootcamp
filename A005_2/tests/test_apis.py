@@ -1,7 +1,8 @@
 import datetime
 import pytest
 
-from mercado_bitcoin.apis import DaySummaryApi, TradesApi
+from mercado_bitcoin.apis import DaySummaryApi, MercadoBitcoinApi, TradesApi
+from unittest.mock import patch
 
 
 class TestDaySummaryAPI:
@@ -84,3 +85,25 @@ class TestTradesAPI:
     def test_get_unix_period(self, date, expected):
         actual = TradesApi("TESTE")._get_unix_period(date)
         assert actual == expected
+
+
+# @pytest.fixture()
+# @patch("mercado_bitcoin.apis.MercadoBitcoinApi.__abstractmethods__", set())
+# def fixture_mercado_bitcoin_api():
+#     return MercadoBitcoinApi(
+#         coin='test'
+#     )
+
+
+# class TestMercadoBitcoinApi:
+#     @patch("requests.get")
+#     @patch("mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint", return_value='valid_endpoint')
+#     def test_get_data_requests_is_called(self, mock, mock_requests, fixture_mercado_bitcoin_api):
+#         fixture_mercado_bitcoin_api.get_data()
+#         mock_requests.assert_called_once_with('valid_endpoint')
+
+#     @patch("mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint", return_value='valid_endpoint')
+#     def test_get_data_with_valid_endpoint(self, mock, mock_requests, fixture_mercado_bitcoin_api):
+#         actual = fixture_mercado_bitcoin_api.get_data()
+#         expected = {"foo": "bar"}
+#         assert actual == expected
