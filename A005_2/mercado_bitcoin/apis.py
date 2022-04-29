@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 class MercadoBitcoinApi:
     def __init__(self, coin: str) -> None:
         self.coin = coin
-        self.baseEndPoint = "https://www.mercadobitcoin.net/api"
+        self.base_end_point = "https://www.mercadobitcoin.net/api"
 
     # Private method
     @abstractmethod
@@ -39,7 +39,7 @@ class DaySummaryApi(MercadoBitcoinApi):
     type = "day-summary"
 
     def _get_endpoint(self, date: datetime.date) -> str:
-        return f"{self.baseEndPoint}/{self.coin}/{self.type}/{date.year}/{date.month}/{date.day}"
+        return f"{self.base_end_point}/{self.coin}/{self.type}/{date.year}/{date.month}/{date.day}"
 
 
 # print(DaySummaryApi(coin="BTC").getData(date=datetime.date(2021, 6, 21)))
@@ -54,17 +54,15 @@ class TradesApi(MercadoBitcoinApi):
     def _get_endpoint(self, since: datetime = None, until: datetime = None) -> str:
         if since and not until:
             unix_since = self._get_unix_period(since)
-            endpoint = f"{self.baseEndPoint}/{self.coin}/{self.type}/{unix_since}"
+            endpoint = f"{self.base_end_point}/{self.coin}/{self.type}/{unix_since}"
         elif since and until:
             if since > until:
                 raise RuntimeError("until can not be greater than since")
             unix_since = self._get_unix_period(since)
             unix_until = self._get_unix_period(until)
-            endpoint = (
-                f"{self.baseEndPoint}/{self.coin}/{self.type}/{unix_since}/{unix_until}"
-            )
+            endpoint = f"{self.base_end_point}/{self.coin}/{self.type}/{unix_since}/{unix_until}"
         else:
-            endpoint = f"{self.baseEndPoint}/{self.coin}/{self.type}"
+            endpoint = f"{self.base_end_point}/{self.coin}/{self.type}"
         return endpoint
 
 
