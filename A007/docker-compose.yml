@@ -1,0 +1,13 @@
+version: "3"
+services:
+  jenkins:
+    image: pyjenkins
+    container_name: "jenkins_python"
+    ports:
+      - "6060:8080"
+      - "50000:50000"
+    volumes:
+      - "./jenkins_home:/var/jenkins_home"
+      - "./exchange:/exchange"
+
+b8f25bd842d2431898c4263e4a045c96
