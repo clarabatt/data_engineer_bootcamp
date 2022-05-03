@@ -97,3 +97,21 @@ data-lake-processed/app/customers/extracted_at=2021-05-01/file01.parquet
 [Bucket]/[Schema-Database-by-use-case]/[Table]/[Partition-by-column]/[Filename]
 
 data-lake-curated/app/customers/extracted_at=2021-05-01/file01.parquet
+
+## Parquet Files
+
+- Open Source
+- Created by Apache
+- Binary file
+
+<img src="./parquet_examples.png" />
+
+CSV == Row oriented
+Parquet == Column oriented
+
+Advantages:
+
+- Column oriented
+- Compressed without loose information
+- Metadata by column
+- Schema defined by column
