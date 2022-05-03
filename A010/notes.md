@@ -75,3 +75,25 @@ Dependind the use case can be served in many technologies:
 - Data Scientist
 - DW
 - BI Tools
+
+## Naming
+
+### Layer 1
+
+[Bucket]/[Schema-Database]/[Table]/[Partition]/[Filename]
+
+data-lake-raw/app/customers/extracted_at=2021-05-01/file01.csv
+
+> Append only!
+
+### Layer 2
+
+[Bucket]/[Schema-Database]/[Table]/[Partition-by-column]/[Filename]
+
+data-lake-processed/app/customers/extracted_at=2021-05-01/file01.parquet
+
+### Layer 3
+
+[Bucket]/[Schema-Database-by-use-case]/[Table]/[Partition-by-column]/[Filename]
+
+data-lake-curated/app/customers/extracted_at=2021-05-01/file01.parquet
