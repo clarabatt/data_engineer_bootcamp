@@ -9,5 +9,3 @@ services:
     volumes:
       - "./jenkins_home:/var/jenkins_home"
       - "./exchange:/exchange"
-
-b8f25bd842d2431898c4263e4a045c96
